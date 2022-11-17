@@ -163,19 +163,19 @@ outputs:
 # DOCUMENTATION
 # Basic design info first, schem & images.
 - name: basic_pcbdraw_png_jlcpcb_green_hasl_top
-  comment: PCB 2D render in PNG format, using oshpark-purple style
+  comment: PCB 2D render in PNG format, using jlcpcb-green-hasl style
   type: pcbdraw
   dir: Output
   options:
-    style: oshpark-purple
+    style: jlcpcb-green-hasl
     format: png
 - name: basic_pcbdraw_png_jlcpcb_green_hasl_bot
-  comment: PCB 2D render in PNG format, using oshpark-purple style
+  comment: PCB 2D render in PNG format, using jlcpcb-green-hasl style
   type: pcbdraw
   dir: Output
   options:
     bottom: true
-    style: oshpark-purple
+    style: jlcpcb-green-hasl
     format: png
 - name: basic_pdf_sch_print
   comment: Schematic in PDF format
