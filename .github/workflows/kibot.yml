@@ -1,0 +1,35 @@
+name: AutomaticOutputs
+
+on:
+  push:
+    paths:
+      - '*.kicad_sch'
+      - '*.kicad_pcb'
+      - '**.kibot.yaml'
+      - '**kibot.yml'
+  pull_request:
+    paths:
+      - '*.kicad_sch'
+      - '*.kicad_pcb'
+      - '**.kibot.yaml'
+      - '**kibot.yml'
+
+jobs:
+  Autogen:
+    name: "Outputs"
+    runs-on: ubuntu-latest
+    container: ghcr.io/inti-cmnb/kicad6_auto_full:latest
+
+    steps:    
+    - uses: actions/checkout@v3
+      with:
+        fetch-depth: '0'
+
+    - uses: INTI-CMNB/KiBot@v2_k6
+      with:
+         config: config.kibot.yaml
+    - name: upload results
+      uses: actions/upload-artifact@v3
+      with:
+        name: DesignOutputs
+        path: Output
