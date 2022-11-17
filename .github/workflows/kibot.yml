@@ -28,6 +28,8 @@ jobs:
     - uses: INTI-CMNB/KiBot@v2_k6
       with:
          config: config.kibot.yaml
+         schema: 'NOAABandpass.kicad_sch'
+         board: 'NOAABandpass.kicad_pcb'
     - name: upload results
       uses: actions/upload-artifact@v3
       with:
